@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="carousel.css">
+    <style>
+        body{
+            min-width: 100vw;
+            min-height: 100vh;
+        }
+        
+        .carousel{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 700px;
+            background-color: rgb(0, 0, 0);
+        }
+        .carousel-viewport{
+            overflow: hidden;
+        }
+        .track{
+            display: flex;
+            transition: all 0.3s;
+        }
+        .carousel-item{
+            flex: 0 0 100%;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 100px;
+        }
+        .carousel-button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 700px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 50px;
+            padding: 30px;
+            opacity: 0.5;
+            transition: opacity 0.15s;
+        }
+        
+        .carousel-button.left{
+            left: 0px;
+            text-align: left;
+        }
+        .carousel-button.right{
+            right: 0px;
+            text-align: right;
+            
+        }
+        .carousel-button:hover{
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel-viewport">
+            
+            <div class="track">
+                <div class="carousel-item item1">
+                    <img class="banner" src="/assets/banner1.jpeg" alt="백제갈비 배너이미지">
+                    <div class="banner-text">
+                        <h2>2026 백제갈비 선물세트 주문 안내</h2>
+                        <h4>
+                            LA갈비·소이동구이 전국 택배 가능<br>
+                            신한은행 110-387-713453 임은규<br><br>
+
+                            주문서 작성 시 확인 후 빠르게 연락드립니다.<br>
+                            문의 02-537-0660
+                        </h4>
+                    </div>
+                </div>
+                <div class="carousel-item item2">
+                    <img class="banner" src="/assets/banner2.jpeg" alt="백제갈비 배너2">
+                </div>
+                <div class="carousel-item item3">
+                    <img class="banner" src="/assets/banner3.jpeg" alt="백제갈비 배너3">
+                </div>
+            </div>
+        </div>
+        <button class="carousel-button left">&lt;</button>
+        <button class="carousel-button right">&gt;</button>
+    </div>
+    <script>
+        const carousel = {
+            elems : {
+                viewport : document.querySelector(".carousel-viewport"),
+                track : document.querySelector(".track"),
+                button : {
+                    left : document.querySelector(".carousel-button.left"),
+                    right : document.querySelector(".carousel-button.right")
+                }
+            },
+            items: document.querySelectorAll('.carousel-item'),
+            itemsCount: document.querySelectorAll('.carousel-item').length,
+            index : 0,
+        }
+
+        const getWidth = () => carousel.elems.viewport.getBoundingClientRect().width;
+
+        const translateTo = (index) => {
+            const width = getWidth();
+            carousel.elems.track.style.transform = `translate3d(${-index * width}px, 0, 0)`;
+        }
+        
+        const clamp = (n, min, max) => {
+            return Math.max(min, Math.min(max, n));
+        }
+
+        carousel.elems.button.left.addEventListener("click", event => {
+            if(carousel.index<=0){
+                carousel.index=carousel.itemsCount-1;
+                translateTo(carousel.index);
+            }
+            else{
+                carousel.index = clamp(carousel.index - 1, 0, carousel.itemsCount - 1);
+                translateTo(carousel.index);
+            }
+        })
+
+        carousel.elems.button.right.addEventListener("click", event => {
+            if(carousel.index >= carousel.itemsCount-1){
+                carousel.index = 0;
+                translateTo(carousel.index);
+            }
+            else{
+                carousel.index = clamp(carousel.index + 1, 0, carousel.itemsCount - 1);
+                translateTo(carousel.index);
+            }
+        })
+        // setInterval(()=>{
+        //     if(carousel.index >= carousel.itemsCount-1){
+        //         carousel.index = 0;
+        //         translateTo(carousel.index);
+        //     }
+        //     else{
+        //         carousel.index = clamp(carousel.index + 1, 0, carousel.itemsCount - 1);
+        //         translateTo(carousel.index);
+        //     }
+        // }, 4000)
+
+        window.addEventListener("resize", event => {
+            translateTo(carousel.index);
+        })
+        
+        console.log(getWidth())
+    </script>
+</body>
+</html>

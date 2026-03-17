@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선물세트 구매하기</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+    <header class="layout">
+        <div class="inner-layout">
+            <img class="logo" src="/assets/logo.jpg" alt="백제갈비 로고">
+        </div>
+    </header>
+    <main class="layout">
+        <div class="inner-layout main-inner-layout"> 
+            <iframe src="/carousel/index.html" frameborder="none"></iframe>                                       
+        </div> 
+    </main>
+    <div class="layout product-list">
+        <div class="inner-layout">
+            <img class="menu-img" src="/assets/menu.jpg" alt="">
+        </div>
+    </div>
+    <div class="order-form layout">
+        <div class="inner-layout form-inner-layout">
+            <form action="none">
+                <div class="input-item"> 
+                    <label for="receiverName" class="input-label">받는 분 성함</label>
+                    <input id="receiverName" type="text" placeholder="ex) 홍길동">
+                </div>
+                <div class="input-item">
+                    <label for="receiverPhoneNumber" class="input-label">받는 분 휴대폰 번호</label>
+                    <input id="receiverPhoneNumber" type="text" placeholder="ex) 010-1234-5678">
+                </div>
+                <div class="input-item">
+                    <label for="receiverPostCode" class="input-label">우편번호(모르실경우 - 모름)</label>
+                    <input id="receiverPostCode" type="text" placeholder="ex) 12345">
+                </div>
+                <div class="input-item">
+                    <label for="receiverAddress" class="input-label">받는 분 주소(매장수령시 - "백제갈비")</label>
+                    <input id="receiverAddress" type="text" placeholder="ex) OO로 OO길, OO동 OO호">
+                </div>
+            
+                <div class="radio-input-item">
+                    <label class="input-label">선물세트 수량</label>
+                    <div class="radio-item">
+                        <input type="radio" name="orderCount" id="orderCount1" value="1" />
+                        <label for="orderCount1">1개</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="orderCount" id="orderCount2" value="2" />
+                        <label for="orderCount2">2개</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="orderCount" id="orderCount3" value="3" />
+                        <label for="orderCount3">3개</label>
+                    
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="orderCount" id="orderCount4" value="4" />
+                        <label for="orderCount4">4개</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="orderCount" id="orderCount5" value="5" />
+                        <label for="orderCount5">5개</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="orderCount" id="orderCount6" value="6" />
+                        <label for="orderCount6">6개(6개 이상 전화요망)</label>
+                    </div>
+                </div>
+                <div class="radio-input-item">
+                    <label class="input-label">상품명</label>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu1" value="1" />
+                        <label for="menu1">소이동구이 2kg</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu2" value="2" />
+                        <label for="menu2">LA갈비 2kg</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu3" value="3" />
+                        <label for="menu3">LA갈비 3kg</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu4" value="4" />
+                        <label for="menu4">한우등심 900g</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu5" value="5" />
+                        <label for="menu5">한우등심 1.2kg</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu6" value="6" />
+                        <label for="menu6">프리미엄 생갈비 1.2kg</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu7" value="7" />
+                        <label for="menu7">프리미엄 생갈비 1.8kg</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu8" value="8" />
+                        <label for="menu8">프리미엄 생갈비 2.4kg</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu9" value="9" />
+                        <label for="menu9">백제 갈빗살세트 (소갈빗살 300g + 소양념구이 900g)</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu10" value="10" />
+                        <label for="menu10">돼지양념구이 6대</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="menu" id="menu11" value="11" />
+                        <label for="menu11">돼지양념구이 9대</label>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <label for="senderName" class="input-label">보내는 분 성함</label>
+                    <input id="senderName" type="text" placeholder="ex) 홍길동">
+                </div>
+                <div class="input-item">
+                    <label for="senderPhoneNumber" class="input-label">보내는 분 휴대폰 번호</label>
+                    <input id="senderPhoneNumber" type="text" placeholder="ex) 010-1234-5678">
+                </div>
+                <div class="radio-input-item">
+                    <label class="input-label">결제 방법</label>
+                    <div class="radio-item">
+                        <input type="radio" name="paymentMethod" id="paymentMethod1" value="1" />
+                        <label for="paymentMethod1">카드결제 (카드 결제 시 아래 배송 메시지에 카드 번호와 유효기간 입력시 결제 후 문자로 영수증 발송드립니다.</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="paymentMethod" id="paymentMethod2" value="2" />
+                        <label for="paymentMethod2">계좌이체 (신한은행 110-387-713453 임은규)</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="paymentMethod" id="paymentMethod3" value="3" />
+                        <label for="paymentMethod3">결제완료</label>
+                    
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="paymentMethod" id="paymentMethod4" value="4" />
+                        <label for="paymentMethod4">전화요망</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="layout">
+        <div class="inner-layout">
+
+        </div>
+    </footer>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
